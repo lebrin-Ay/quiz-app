@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+/*hompage*/
+
+section{
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    padding: 1rem;
+    background:#218380 ;
+    color: #ffffff;
+
+}
+
+.box {
+    box-shadow: 10px 10px 10px #B2BEB5;
+    margin:1rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #B2BEB5;
+}
+
+.main{
+    padding: 3rem;
+}
+
+.main h1{
+    padding-bottom: 1rem;
+    
+}
+.main p{
+    padding-bottom: 1rem;
+}
+
+.container{
+    padding-bottom: 7rem;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+
+button{
+    padding: 0.5rem 1.1rem;
+    background: #218380;
+    border-radius: 5px;
+    border:none;
+    color: #ffffff;
+}
+
+
+
+/*quiz*/
+
+li{
+    list-style: none;
+    padding: 1.5rem;
+    background:#218380; 
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 5px;
+}
+/* .options{
+
+} */
+
+/*finished*/
+
+.submit input{
+    padding:1rem;
+    margin-bottom: 1rem;
+
+}
+
+
+
+/*highsore*/
+.row{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.highscore{
+    margin-left: 0.5rem;
+}
+
+/*genereal*/
+h2{
+    font-size: 24px;
+}
+
+
+@media (min-width:600px){
+
+    .container-body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .square{
+        width: 25rem;
+        height: 25rem;
+    }
+    .rectangle{
+        width: 35rem;
+        height: 20rem;
+        
+    }
+
+    .rectangle-2{
+        padding: 4rem;
+        margin: 3rem;
+        
+    }
+    
+
+}
+
+/*Medium devices only */
+@media(min-width: 601px) and (max-width: 1199px) {
+    .box {
+        width: 790px;
+        height: 280px;
+        border-radius: 30px;
+    }
+    .main {
+        padding: 3rem;
+    }
+    .btnSubmit {
+        padding: 1rem;
+        border-radius: 10px;
+        margin-left: 1rem;
+    }
+    .highscore {
+        margin-top: 4rem;
+        padding: 1.2rem;
+    }
+    .rectangle-2 {
+        margin: auto;
+        height: 360px;
+    }
+    .options {
+        margin-top: -2rem;
+    }
+    .options li {
+        width: 650px;
+        margin-left: -5rem;
+    }
+}
+
+@media(min-width: 1200px) and (max-width: 1600px) {
+    .box {
+        width: 790px;
+        height: 280px;
+        border-radius: 30px;
+    }
+    .main {
+        padding: 3rem;
+    }
+    .btnSubmit {
+        padding: 1rem;
+        border-radius: 10px;
+        margin-left: 1rem;
+        font-size: 16px;
+    }
+    .highscore {
+        margin-top: 4rem;
+        padding: 1.2rem;
+        font-size: 16px;
+    }
+    .rectangle-2 {
+        margin: auto;
+        height: 360px;
+    }
+    .options {
+        margin-top: -2rem;
+    }
+    .options li {
+        width: 650px;
+        margin-left: -5rem;
+    }
+}
+
