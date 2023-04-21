@@ -97,7 +97,9 @@ li{
 h2{
     font-size: 24px;
 }
-
+.options li:hover{
+    cursor: pointer;
+}
 
 @media (min-width:600px){
 
