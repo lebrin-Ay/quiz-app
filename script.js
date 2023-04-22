@@ -75,7 +75,7 @@ startGame = () => {
       if( time <= 0){
           clearInterval(counter);
            localStorage.setItem('mostRecentScore', score);
-           return window.location.assign('/finished.html');}
+           return window.location.assign("finished.html");}
     }, 1000);
     getNewQuestion();
 
@@ -85,7 +85,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
         localStorage.setItem('mostRecentScore', score);
         //go to end page
-        return window.location.assign('/finished.html');
+        return window.location.assign("finished.html");
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
