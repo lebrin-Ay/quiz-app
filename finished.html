@@ -11,12 +11,11 @@
     
 </head>
 <body>
-    <section>
         <section>
             <div class="container">
                 <div class="header">
                     <div>
-                        <p>View High scores<i class="fas fa-hand-point-left fa-lg"></i></p>
+                        <p><a href="highscore.html">View High scores<i class="fas fa-hand-point-left fa-lg"></i></a></p>
                     </div> 
                     <div>Time: <span>&nbsp;</span></div>
                 </div>
@@ -27,11 +26,14 @@
                     <div class="main">
                         <div>
                             <div class="submit">
+                                  
                                 <h1>All done !</h1>
-                                <p>Your final score</p>
-                                <label for="">Enter Initials:</label>
-                                <input type="text">
-                                <button class="btnSubmit"><a href="highscore.html">submit</a></button>
+                                <p>Your final score is <span id="finalScore">0</span></p>
+                                <form>
+                                  <label for="">Enter initials:</label>
+                                  <input type="text" id="username">
+                                  <button class="btnSubmit" type="submit" id = "saveScoreBtn" onclick="saveHighScore(event)" disabled>Submit</button>
+                                </form>  
                             </div>   
                         </div>
                     </div>
@@ -40,7 +42,7 @@
             </div>
              
         </section>
-        
-<script src="./js/script.js"></script>
+        <script src="/js/finished.js"></script>
+ 
 </body>
 </html>

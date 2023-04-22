@@ -1,11 +1,16 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const scoreText = document.getElementById("score");
+const timeCount = document.getElementById('timeCount')
+
 
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let counter;
+let timeValue = 50;
 
 
 let questions = [
@@ -55,16 +60,30 @@ let questions = [
 
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 5;
+let time = 50;
+let timelimit;
+
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
+    //startTimer(time);//
+    timelimit = setInterval(function () {
+      timeCount.innerText = time;
+      time--;
+      if( time <= 0){
+          clearInterval(counter);
+           localStorage.setItem('mostRecentScore', score);
+           return window.location.assign('/finished.html');}
+    }, 1000);
     getNewQuestion();
+
 
 };
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
+        localStorage.setItem('mostRecentScore', score);
         //go to end page
         return window.location.assign('/finished.html');
     }
@@ -89,35 +108,69 @@ choices.forEach( choice => {
 
      acceptingAnswers = false;
      const selectedChoice = e.target;
-     const selectedAnswer = selectedChoice.dataset['number'];
+     const selectedAnswer = selectedChoice.dataset["number"];
 
     const classToApply = 
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+      selectedAnswer == currentQuestion.answer ? "Correct!" : "Incorrect!";
+
+
+    if(classToApply === "Correct!") {
+      incrementScore(CORRECT_BONUS);
+    } 
+    if(classToApply === "Incorrect!"){
+      time -= 10;
+      
+    
+    }
     
 
-    selectedChoice.parentElement.classList.add(classToApply);
+    let ans = document.getElementById('answer')
+      
+      ans.innerText = classToApply;
 
     setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
+        ans.innerText != "";
+    }, 1000);
+
+   
+      selectedChoice.classList.add(classToApply);
+    
+    setTimeout(() => {
+        ans.innerText = '';
+        ans.classList.remove(classToApply);
+        selectedChoice.classList.remove(classToApply);
         getNewQuestion();
+    
 
     }, 1000);
+   
      
     });
-    var crct = document.getElementById('crct')
-    if(currentQuestion.answer == "correct"){
-        crct.style.display = 'block';
-        incrct.style.display = 'none';
-        
-    };
-
-    var incrct = document.getElementById('incrct');
-    if(currentQuestion.answer == "incorrect"){
-        incrct.style.display = 'block';
-        crct.style.display = 'none'
-        
-    };
-
 });
 
+incrementScore = num => {
+  score += num;
+};
+ 
+//function startTimer(time){
+ // counter = setInterval(timer, 1000);
+ // function timer(){
+   // timeCount.innerText = time;
+  //  time--;
+  //  if( time <= 0){
+   //   clearInterval(counter);
+   //   localStorage.setItem('mostRecentScore', score);
+   //   return window.location.assign('/finished.html');
+   // }
+   // if(classToApply === "Incorrect!"){
+   //   time -= 10;
+   //   timeCount.innerText = time;
+    
+   // }
+    
+    
+ // };
+//};
+
 startGame();
+

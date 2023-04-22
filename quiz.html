@@ -14,17 +14,17 @@
         <div class="container">
             <div class="header">
                 <div>
-                    <p>View High scores<i class="fas fa-hand-point-left fa-lg"></i></p>
+                    <p><a href="highscore.html">View High scores<i class="fas fa-hand-point-left fa-lg"></i></a></p>
                 </div> 
-                <div>Time</div>
+                <div>Time: <span id="timeCount"></span></div>
             </div>
         </div>
         <div class="container">
-            
             <div class="box rectangle-2">
                 <h2 id="question">What is the answer to this question?</h2>
                 <div class="main">  
                         <div class="questionWrap">
+                            
                             <div class="options">
                                 <ul>
                                     <li class="choice-text" data-number="1">choice 1</li>
@@ -32,10 +32,13 @@
                                     <li class="choice-text" data-number="3">choice 3</li>
                                     <li class="choice-text" data-number="4">choice 4</li>
                                 </ul>
-                            </div>                           
+                                <p id="answer" class=""></p>
+                            </div>
+                            
+
+                           
             
                         </div>
-                     
                 </section>
                 </div>
 

@@ -19,6 +19,19 @@ section{
     color: #ffffff;
 
 }
+.submit ul{
+    display: none;
+}
+
+
+
+  
+
+
+.questionWrap .h4{
+    display: none;
+}
+
 
 .box {
     box-shadow: 10px 10px 10px #B2BEB5;
@@ -26,6 +39,7 @@ section{
     background: white;
     border-radius: 10px;
     border: 1px solid #B2BEB5;
+    height: fit-content;
 }
 
 .main{
@@ -49,7 +63,9 @@ a{
     color: #ffffff;
     
 }
-
+i{
+    font-style: normal;
+}
 button{
     padding: 0.5rem 1.1rem;
     background: #218380;
@@ -57,16 +73,22 @@ button{
     border:none;
     color: #ffffff;
 }
-
+#wrongp{
+    display: none;
+}
+#rightp{
+    display: none;
+}
 /*quiz*/
 
-li{
+li:not(#highScoresList li){
     list-style: none;
-    padding: 1.5rem;
+    padding: 1rem;
     background:#218380; 
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
+    color: white;
 }
 
 /* .options{
@@ -91,6 +113,11 @@ li{
 
 .highscore{
     margin-left: 0.5rem;
+}
+
+#highScoresList{
+    font-size: medium;
+    padding-bottom: 1.5rem;
 }
 
 /*genereal*/
@@ -122,6 +149,7 @@ h2{
         padding: 4rem;
         margin: 3rem;   
     }
+   
 
 }
 
@@ -129,7 +157,7 @@ h2{
 @media(min-width: 601px) and (max-width: 1199px) {
     .box {
         width: 790px;
-        height: 280px;
+        height: fit-content;
         border-radius: 30px;
     }
     .main {
@@ -146,22 +174,45 @@ h2{
     }
     .rectangle-2 {
         margin: auto;
-        height: 390px;
+        height: 450px;
     }
     .options {
         margin-top: -2rem;
     }
     .options li {
         width: 650px;
-        height: 40px;
+    
         margin-left: -5rem;
     }
+  
 }
-
+@media(max-width: 599px){
+    #question{
+        font-size:large;
+        text-align: left;
+        padding: 2rem;
+    }
+    .options li{
+        width: 15rem;
+        margin-left: 0;
+    }
+    ul{
+        padding-left: 0;
+    }
+    .box{
+        max-width: 90vw;
+        box-shadow: 10px 10px 10px #B2BEB5;
+        margin: 0 auto;
+    }
+    button{
+        margin-bottom: 0.5rem;
+    }
+  
+}
 @media(min-width: 1200px) and (max-width: 1600px) {
     .box {
         width: 790px;
-        height: 290px;
+        height: fit-content;
         border-radius: 30px;
     }
     .main {
@@ -180,14 +231,14 @@ h2{
     }
     .rectangle-2 {
         margin: auto;
-        height: 390px;
+        height: 450px;
     }
     .options {
         margin-top: -2rem;
     }
     .options li {
         width: 650px;
-        height: 40px;
+       
         margin-left: -5rem;
     }
 }
